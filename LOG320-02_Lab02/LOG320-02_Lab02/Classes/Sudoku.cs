@@ -91,17 +91,19 @@ namespace LOG320_02_Lab02.Classes
 
     public class SudokuNode
     {
-        private int? value;
+        private int value;
         private Coordinate coordinate;
+        private bool isInitial;
 
         public SudokuNode() { }
-        public SudokuNode(int? value, Coordinate coordinate)
+        public SudokuNode(int value, Coordinate coordinate, bool isInitial)
         {
             this.value = value;
             this.coordinate = coordinate;
+            this.isInitial = isInitial;
         }
 
-        public int? Value
+        public int Value
         {
             get
             {
@@ -121,6 +123,17 @@ namespace LOG320_02_Lab02.Classes
             set
             {
                 coordinate = value;
+            }
+        }
+        public bool IsInitial
+        {
+            get
+            {
+                return isInitial;
+            }
+            set
+            {
+                this.isInitial = value;
             }
         }
     }
@@ -160,5 +173,10 @@ namespace LOG320_02_Lab02.Classes
             }
         }
 
+        public bool Compare(Coordinate coordinateToCompare)
+        {
+            if (this.x == coordinateToCompare.X && this.y == coordinateToCompare.Y) return true;
+            return false;
+        }
     }
 }

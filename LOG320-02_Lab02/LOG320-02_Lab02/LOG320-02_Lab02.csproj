@@ -67,6 +67,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Sudoku.cs" />
+    <Compile Include="Classes\SudokuNodePile.cs" />
     <Compile Include="Classes\SudokuSolver.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
