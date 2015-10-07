@@ -11,6 +11,7 @@ namespace LOG320_02_Lab02.Classes
     {
 
         private const int TAILLE_JEU_9X9 = 81;
+        private const int Test = 6;
 
         public Sudoku SolveTextFile(HttpPostedFile file)
         {
