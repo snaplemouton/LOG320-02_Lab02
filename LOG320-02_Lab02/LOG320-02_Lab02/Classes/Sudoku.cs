@@ -10,12 +10,14 @@ namespace LOG320_02_Lab02.Classes
         private SudokuNodeArray[] rows;
         private SudokuNodeArray[] columns;
         private SudokuNodeArray[] regions;
+        private bool solveable;
 
         public Sudoku()
         {
             this.rows = new SudokuNodeArray[9];
             this.columns = new SudokuNodeArray[9];
             this.regions = new SudokuNodeArray[9];
+            this.solveable = true;
 
             for (int i = 0; i < 9; i++)
             {
@@ -29,6 +31,7 @@ namespace LOG320_02_Lab02.Classes
             this.rows = rows;
             this.columns = columns;
             this.regions = regions;
+            this.solveable = true;
         }
 
         public SudokuNodeArray[] Rows
@@ -64,6 +67,17 @@ namespace LOG320_02_Lab02.Classes
                 regions = value;
             }
         }
+        public bool Solveable
+        {
+            get
+            {
+                return solveable;
+            }
+            set
+            {
+                solveable = value;
+            }
+        }
     }
 
     public class SudokuNodeArray
@@ -94,13 +108,15 @@ namespace LOG320_02_Lab02.Classes
         private int value;
         private Coordinate coordinate;
         private bool isInitial;
+        private bool wasChecked;
 
-        public SudokuNode() { }
+        public SudokuNode() { this.wasChecked = false; }
         public SudokuNode(int value, Coordinate coordinate, bool isInitial)
         {
             this.value = value;
             this.coordinate = coordinate;
             this.isInitial = isInitial;
+            this.wasChecked = false;
         }
 
         public int Value
@@ -134,6 +150,17 @@ namespace LOG320_02_Lab02.Classes
             set
             {
                 this.isInitial = value;
+            }
+        }
+        public bool WasChecked
+        {
+            get
+            {
+                return wasChecked;
+            }
+            set
+            {
+                this.wasChecked = value;
             }
         }
     }

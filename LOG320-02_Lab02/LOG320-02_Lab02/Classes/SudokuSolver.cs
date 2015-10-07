@@ -59,45 +59,86 @@ namespace LOG320_02_Lab02.Classes
             int y = 0;
             int x = 0;
             int num = 1;
-            bool movingForward = true;
+            int region = 0;
+            int nodeInRegion = 0;
+            Coordinate firstNode = null;
             while (y < sudoku.Rows.Length)
             {
                 while (x < sudoku.Rows[y].Nodes.Length)
                 {
                     if (!sudoku.Rows[y].Nodes[x].IsInitial)
                     {
-                        movingForward = false;
+                        if (firstNode == null)
+                        {
+                            firstNode = new Coordinate(x, y);
+                        }
                         while (num < 10)
                         {
                             sudoku.Rows[y].Nodes[x].Value = num;
                             sudoku.Columns[x].Nodes[y].Value = num;
-                            //sudoku.Regions[0].Nodes[0].Value = num;
+                            region = (int)Math.Floor(((decimal)x) / 3) + ((int)Math.Floor(((decimal)y) / 3) * 3);
+                            nodeInRegion = x - ((region % 3) * 3) + ((y % 3) * 3);
+                            sudoku.Regions[region].Nodes[nodeInRegion].Value = num;
                             if (!SearchNodeList(sudoku.Rows[y], sudoku.Rows[y].Nodes[x]) &&
-                                !SearchNodeList(sudoku.Columns[x], sudoku.Rows[y].Nodes[x]))
+                                !SearchNodeList(sudoku.Columns[x], sudoku.Rows[y].Nodes[x]) &&
+                                !SearchNodeList(sudoku.Regions[region], sudoku.Rows[y].Nodes[x]))
                             {
-                                movingForward = true;
                                 break;
                             }
                             num++;
                         }
                     }
-                    if (movingForward)
+                    else
+                    {
+                        if (!sudoku.Rows[y].Nodes[x].WasChecked)
+                        {
+                            region = (int)Math.Floor(((decimal)x) / 3) + ((int)Math.Floor(((decimal)y) / 3) * 3);
+                            if (SearchNodeList(sudoku.Rows[y], sudoku.Rows[y].Nodes[x]) ||
+                                   SearchNodeList(sudoku.Columns[x], sudoku.Rows[y].Nodes[x]) ||
+                                   SearchNodeList(sudoku.Regions[region], sudoku.Rows[y].Nodes[x]))
+                            {
+                                sudoku.Solveable = false;
+                                return sudoku;
+                            }
+                        }
+                    }
+                    if (num < 10)
                     {
                         x++;
                         num = 1;
                     }
                     else
                     {
+                        if (firstNode.X == x && firstNode.Y == y)
+                        {
+                            sudoku.Solveable = false;
+                            return sudoku;
+                        }
+                        sudoku.Rows[y].Nodes[x].Value = 0;
+                        sudoku.Columns[x].Nodes[y].Value = 0;
+                        region = (int)Math.Floor(((decimal)x) / 3) + ((int)Math.Floor(((decimal)y) / 3) * 3);
+                        nodeInRegion = x - ((region % 3) * 3) + ((y % 3) * 3);
+                        sudoku.Regions[region].Nodes[nodeInRegion].Value = 0;
                         if (x > 0)
+                        {
                             x--;
+                        }
                         else
                         {
-                            if (y != 0)
+                            y--;
+                            x = 8;
+                        }
+                        while (sudoku.Rows[y].Nodes[x].IsInitial)
+                        {
+                            if (x > 0)
+                            {
+                                x--;
+                            }
+                            else
                             {
                                 y--;
                                 x = 8;
                             }
-                            else movingForward = true;
                         }
                         num = sudoku.Rows[y].Nodes[x].Value + 1;
                     }
