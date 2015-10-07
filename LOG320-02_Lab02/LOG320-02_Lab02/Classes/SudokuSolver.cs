@@ -9,6 +9,9 @@ namespace LOG320_02_Lab02.Classes
 {
     public class SudokuSolver
     {
+
+        private const int TAILLE_JEU_9X9 = 81;
+
         public Sudoku SolveTextFile(HttpPostedFile file)
         {
             // Read the text file
