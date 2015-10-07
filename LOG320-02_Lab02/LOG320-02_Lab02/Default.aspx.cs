@@ -26,7 +26,37 @@ namespace LOG320_02_Lab02
 
                 if (sudoku != null)
                 {
+                    if (sudoku.Solveable)
+                    {
+                        int y = 0;
+                        int x = 0;
+                        string style = "";
+                        string tablestring = "<table style='width:300px;height:300px;text-align:center;border-collapse:collapse'>";
+                        foreach (SudokuNodeArray sna in sudoku.Rows)
+                        {
+                            tablestring += "<tr>";
+                            foreach (SudokuNode sn in sna.Nodes)
+                            {
+                                if (y == 0 || y == 3 || y == 6) style += "border-top:2px solid black;";
+                                if (y == 2 || y == 5 || y == 8) style += "border-bottom:2px solid black;";
+                                if (x == 0 || x == 3 || x == 6) style += "border-left:2px solid black;";
+                                if (x == 2 || x == 5 || x == 8) style += "border-right:2px solid black;";
+                                tablestring += "<td style='border:1px solid black;" + style + "'>" + sn.Value.ToString() + "</td>";
+                                style = "";
+                                x++;
+                            }
+                            tablestring += "</tr>";
+                            y++;
+                            x = 0;
+                        }
+                        tablestring += "</table>";
 
+                        solvedSudoku.InnerHtml = tablestring;
+                    }
+                    else
+                    {
+                        popupAlert("Aucune solution possible pour ce Sudoku.");
+                    }
                 }
                 else
                 {
