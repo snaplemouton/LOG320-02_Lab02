@@ -31,6 +31,15 @@ namespace LOG320_02_Lab02 {
         protected global::System.Web.UI.WebControls.Button btnTemplate;
         
         /// <summary>
+        /// result control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl result;
+        
+        /// <summary>
         /// solvedSudoku control.
         /// </summary>
         /// <remarks>

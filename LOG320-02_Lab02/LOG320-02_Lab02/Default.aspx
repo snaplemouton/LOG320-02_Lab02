@@ -26,11 +26,7 @@
     Note: Upon clicking this button, the application will solve the Sudoku and return a new text file with the same results found below.
     -->
     <hr />
-    <h2>Results</h2>
-    Time taken: <asp:Label />
-    <br />
-    Solved Sudoku
-    <br />
+    <div id="result" runat="server"></div>
     <div id="solvedSudoku" runat="server"></div>
     <!--<table>
         <tr id="row1">

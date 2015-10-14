@@ -24,6 +24,8 @@ namespace LOG320_02_Lab02
                 SudokuSolver sudokuSolver = new SudokuSolver();
                 Sudoku sudoku = sudokuSolver.SolveTextFile(file);
 
+                result.InnerHtml = "<h2>Results</h2><p>Time taken: " + sudoku.SolvingTime + " milliseconds <p/><h2>Solved Sudoku<h2/>";
+
                 if (sudoku != null)
                 {
                     if (sudoku.Solveable)

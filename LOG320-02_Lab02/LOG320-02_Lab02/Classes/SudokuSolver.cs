@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.IO;
 using System.Text;
+using System.Diagnostics;
 
 namespace LOG320_02_Lab02.Classes
 {
@@ -25,6 +26,7 @@ namespace LOG320_02_Lab02.Classes
             int currentValue = 0;
             Sudoku sudoku = new Sudoku();
             StringBuilder line;
+
             while (!sr.EndOfStream && !wrongFile)
             {
                 line = new StringBuilder(sr.ReadLine());
@@ -55,6 +57,7 @@ namespace LOG320_02_Lab02.Classes
             {
                 return null;
             }
+
             return SolveSudoku(sudoku);
         }
 
@@ -66,6 +69,9 @@ namespace LOG320_02_Lab02.Classes
             int region = 0;
             int nodeInRegion = 0;
             Coordinate firstNode = null;
+
+            Stopwatch stopWatch = Stopwatch.StartNew();
+
             while (y < sudoku.Rows.Length)
             {
                 while (x < sudoku.Rows[y].Nodes.Length)
@@ -150,6 +156,10 @@ namespace LOG320_02_Lab02.Classes
                 y++;
                 x = 0;
             }
+
+            stopWatch.Stop();
+            sudoku.SolvingTime = stopWatch.ElapsedMilliseconds;
+
             return sudoku;
         }
 

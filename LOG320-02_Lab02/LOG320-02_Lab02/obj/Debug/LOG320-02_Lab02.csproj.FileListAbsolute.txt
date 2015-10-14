@@ -7,3 +7,9 @@ C:\Users\Maxime\Desktop\LOG320\Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_L
 C:\Users\Maxime\Desktop\LOG320\Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\bin\LOG320-02_Lab02.pdb
 C:\Users\Maxime\Desktop\LOG320\Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\obj\Debug\LOG320-02_Lab02.pdb
 C:\Users\Maxime\Desktop\LOG320\Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\obj\Debug\LOG320-02_Lab02.csprojResolveAssemblyReference.cache
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\bin\LOG320-02_Lab02.dll.config
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\bin\LOG320-02_Lab02.dll
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\bin\LOG320-02_Lab02.pdb
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\obj\Debug\LOG320-02_Lab02.csprojResolveAssemblyReference.cache
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\obj\Debug\LOG320-02_Lab02.dll
+C:\Users\KIRO\Documents\workspace\ETS-Projects\LOG320\LOG320-02_Lab02\LOG320-02_Lab02\LOG320-02_Lab02\obj\Debug\LOG320-02_Lab02.pdb

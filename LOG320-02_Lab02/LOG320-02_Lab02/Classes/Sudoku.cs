@@ -11,6 +11,7 @@ namespace LOG320_02_Lab02.Classes
         private SudokuNodeArray[] columns;
         private SudokuNodeArray[] regions;
         private bool solveable;
+        private long solvingTime;
 
         public Sudoku()
         {
@@ -26,6 +27,7 @@ namespace LOG320_02_Lab02.Classes
                 regions[i] = new SudokuNodeArray(new SudokuNode[9]);
             }
         }
+
         public Sudoku(SudokuNodeArray[] rows, SudokuNodeArray[] columns, SudokuNodeArray[] regions)
         {
             this.rows = rows;
@@ -45,6 +47,7 @@ namespace LOG320_02_Lab02.Classes
                 rows = value;
             }
         }
+
         public SudokuNodeArray[] Columns
         {
             get
@@ -56,6 +59,7 @@ namespace LOG320_02_Lab02.Classes
                 columns = value;
             }
         }
+
         public SudokuNodeArray[] Regions
         {
             get
@@ -67,6 +71,7 @@ namespace LOG320_02_Lab02.Classes
                 regions = value;
             }
         }
+
         public bool Solveable
         {
             get
@@ -76,6 +81,18 @@ namespace LOG320_02_Lab02.Classes
             set
             {
                 solveable = value;
+            }
+        }
+
+        public long SolvingTime
+        {
+            get
+            {
+                return solvingTime;
+            }
+            set
+            {
+                solvingTime = value;
             }
         }
     }
