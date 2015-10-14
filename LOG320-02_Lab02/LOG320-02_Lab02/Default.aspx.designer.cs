@@ -13,22 +13,31 @@ namespace LOG320_02_Lab02 {
     public partial class _Default {
         
         /// <summary>
-        /// btnTextFile control.
+        /// btnOpenSudoku control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTextFile;
+        protected global::System.Web.UI.WebControls.Button btnOpenSudoku;
         
         /// <summary>
-        /// btnTemplate control.
+        /// btnSolveSudoku control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnTemplate;
+        protected global::System.Web.UI.WebControls.Button btnSolveSudoku;
+        
+        /// <summary>
+        /// timeTaken control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl timeTaken;
         
         /// <summary>
         /// solvedSudoku control.

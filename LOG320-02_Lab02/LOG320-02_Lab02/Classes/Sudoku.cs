@@ -11,6 +11,7 @@ namespace LOG320_02_Lab02.Classes
         private SudokuNodeArray[] columns;
         private SudokuNodeArray[] regions;
         private bool solveable;
+        private long timeToSolve;
 
         public Sudoku()
         {
@@ -18,6 +19,7 @@ namespace LOG320_02_Lab02.Classes
             this.columns = new SudokuNodeArray[9];
             this.regions = new SudokuNodeArray[9];
             this.solveable = true;
+            this.timeToSolve = 0;
 
             for (int i = 0; i < 9; i++)
             {
@@ -32,6 +34,7 @@ namespace LOG320_02_Lab02.Classes
             this.columns = columns;
             this.regions = regions;
             this.solveable = true;
+            this.timeToSolve = 0;
         }
 
         public SudokuNodeArray[] Rows
@@ -78,6 +81,17 @@ namespace LOG320_02_Lab02.Classes
                 solveable = value;
             }
         }
+        public long TimeToSolve
+        {
+            get
+            {
+                return timeToSolve;
+            }
+            set
+            {
+                timeToSolve = value;
+            }
+        }
     }
 
     public class SudokuNodeArray
@@ -109,14 +123,18 @@ namespace LOG320_02_Lab02.Classes
         private Coordinate coordinate;
         private bool isInitial;
         private bool wasChecked;
+        private int region;
+        private int nodeInRegion;
 
         public SudokuNode() { this.wasChecked = false; }
-        public SudokuNode(int value, Coordinate coordinate, bool isInitial)
+        public SudokuNode(int value, Coordinate coordinate, bool isInitial, int region, int nodeInRegion)
         {
             this.value = value;
             this.coordinate = coordinate;
             this.isInitial = isInitial;
             this.wasChecked = false;
+            this.region = region;
+            this.nodeInRegion = nodeInRegion;
         }
 
         public int Value
@@ -161,6 +179,28 @@ namespace LOG320_02_Lab02.Classes
             set
             {
                 this.wasChecked = value;
+            }
+        }
+        public int Region
+        {
+            get
+            {
+                return region;
+            }
+            set
+            {
+                this.region = value;
+            }
+        }
+        public int NodeInRegion
+        {
+            get
+            {
+                return nodeInRegion;
+            }
+            set
+            {
+                this.nodeInRegion = value;
             }
         }
     }
